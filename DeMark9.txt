@@ -1,18 +1,12 @@
 //Indicator_DeMark_9
-study("DeMark 9",overylay=true)
+study("DeMark 9",overlay=true)
 TD = close > close [4] ?nz(TD[1])+1:0
 TS = close < close [4] ?nz(TD[1])+1:0
 TDUp = TD - valuewhen(TD < TD[1], TD , 1)
 TDDn = TS - valuewhen(TS < TS[1], TD , 1)
-plotshape(TDUp==7?
-true:na,style=shape.triangledown,text="7",color=green,location=location.abovebar)
-plotshape(TDUp==8?
-true:na,style=shape.triangledown,text="8",color=green,location=location.abovebar)
-plotshape(TDUp==9?
-true:na,style=shape.triangledown,text="⚠",color=green,location=location.abovebar)
-plotshape(TDDN==7?
-true:na,style=shape.triangleup,text="7",color=red,location=location.belowbar)
-plotshape(TDDN==8?
-true:na,style=shape.triangleup,text="8",color=red,location=location.belowbar)
-plotshape(TDDN==9?
-true:na,style=shape.triangleup,text="✅",color=red,location=location.belowbar)
+plotshape(TDUp==7?true:na,style=shape.triangledown,text="7",color=green,location=location.abovebar)
+plotshape(TDUp==8?true:na,style=shape.triangledown,text="8",color=green,location=location.abovebar)
+plotshape(TDUp==9?true:na,style=shape.triangledown,text="⚠",color=green,location=location.abovebar)
+plotshape(TDDn==7?true:na,style=shape.triangleup,text="7",color=red,location=location.belowbar)
+plotshape(TDDn==8?true:na,style=shape.triangleup,text="8",color=red,location=location.belowbar)
+plotshape(TDDn==9?true:na,style=shape.triangleup,text="✅",color=red,location=location.belowbar)
